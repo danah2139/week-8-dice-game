@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import './board.css';
-import Player from '../player/Player';
+import Player from '../Player/Player';
 import ActionsBar from '../actionsBar/ActionsBar';
 const initialState = {
 	finalScore: 100,
@@ -83,6 +83,7 @@ class Board extends Component {
 								: 'loss'
 							: 'in-game'
 					}
+					playerName="PLAYER 1"
 				/>
 				<br />
 				<ActionsBar
@@ -106,6 +107,7 @@ class Board extends Component {
 								: 'loss'
 							: 'in-game'
 					}
+					playerName="PLAYER 2"
 				/>
 			</div>
 		);

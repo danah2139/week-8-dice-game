@@ -1,20 +1,24 @@
 import React from 'react';
 import CurrentScore from './CurrentScore';
 import GlobalScore from './GlobalScore';
+
 import './player.css';
 
-const Player = ({ globalScore, CurrentScore, dices, playerTurn, hasWon }) => {
+const Player = ({ score, dices, playerTurn, hasWon, playerName }) => {
 	if (hasWon === 'in-game') {
 		return (
 			<div className={`player ${playerTurn ? 'my-turn' : ''}`}>
-				<GlobalScore score={globalScore} />
+				<div style={{ textAlign: 'center' }}>
+					<span className="title">{playerName}</span>
+					<GlobalScore score={score} />
+				</div>
 				<CurrentScore dices={dices} playerTurn={playerTurn} />
 			</div>
 		);
 	} else if (hasWon === 'won') {
-		return <div className="player">{'won :)'}</div>;
+		return <div className="player win-loss">{'LOSS :('}</div>;
 	} else {
-		return <div className="player">{'loss :('}</div>;
+		return <div className="player win-loss">{'WIN :)'}</div>;
 	}
 };
 

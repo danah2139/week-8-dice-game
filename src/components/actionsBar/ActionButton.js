@@ -4,7 +4,9 @@ class ActionButton extends Component {
 	render() {
 		return (
 			<div>
-				<button onClick={this.props.onButtonClick}>{this.props.btnName}</button>
+				<button className="btn" onClick={this.props.onButtonClick}>
+					<div className="btn-icon">{this.props.btnName}</div>
+				</button>
 			</div>
 		);
 	}

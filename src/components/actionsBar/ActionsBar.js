@@ -3,6 +3,7 @@ import Dices from '../dices/Dices';
 import ActionButton from './ActionButton';
 import FinalScore from './FinalScore';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import './actionsBar.css';
 import {
 	faPlus,
 	faSync,

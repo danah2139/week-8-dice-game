@@ -3,4 +3,7 @@
 	margin: 3vh 3vw;
 	width: 94vw;
 	height: 94vh;
+	border-radius: 8px;
+	border: solid #ff4757 3px;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }

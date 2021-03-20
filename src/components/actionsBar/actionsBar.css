@@ -1,0 +1,94 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	justify-content: space-between;
+	align-items: center;
+
+	width: 200px;
+	height: 80%;
+	left: calc(50% - 90px);
+
+	position: absolute;
+	top: 10%;
+}
+
+.die {
+	height: 140px;
+	width: 140px;
+	border-radius: 8px;
+	border: 2px solid black;
+	margin: 10px 0;
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+}
+
+.btn {
+	border: none;
+	width: 25rem;
+	height: 3rem;
+	background: transparent;
+	font-size: 2rem;
+	color: #777;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	cursor: pointer;
+	outline: none;
+}
+
+.btn .btn-icon {
+	display: inline;
+	margin: 1rem;
+	color: #ff4757;
+	font-size: 2.5rem;
+}
+
+.final-score {
+	border: none;
+	width: 12rem;
+	height: 3rem;
+	background: transparent;
+	font-size: 1.2rem;
+	color: #777;
+	text-align: center;
+	cursor: pointer;
+	outline: none;
+	box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+		rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+	border-radius: 8px;
+}
+
+@media only screen and (max-width: 780px) {
+	.container {
+		width: 200px;
+		height: 40%;
+		left: calc(50% - 100px);
+		top: 30vh;
+	}
+
+	.die {
+		height: 60px;
+		width: 60px;
+		border-radius: 8px;
+		border: 1px solid black;
+		margin: 0 10px;
+	}
+
+	.btn {
+		border: none;
+		width: auto;
+		height: 2rem;
+		font-size: 1.2rem;
+	}
+
+	.btn .btn-icon {
+		font-size: 1.6rem;
+	}
+
+	.final-score {
+		width: 10rem;
+		height: 2rem;
+		font-size: 1.2rem;
+	}
+}

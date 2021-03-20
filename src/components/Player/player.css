@@ -1,6 +1,60 @@
-.current-box {
-	background-color: red;
+.player {
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.win-loss {
+	font-size: 3.5rem;
+}
+
+.my-turn {
+	background: #f1f2f6;
+}
+
+.title {
+	text-align: center;
+	font-size: 3rem;
+}
+
+.total {
+	font-size: 10rem;
+	font-weight: 100;
+	color: #ff4757;
+}
+
+.current {
+	text-align: center;
+	font-size: 2rem;
+	background: #ff4757;
 	color: white;
-	width: 50px;
-	height: 50px;
+	font-weight: 500;
+	padding: 15px;
+	border-radius: 8px;
+}
+
+@media only screen and (max-width: 480px) {
+	.player {
+		justify-content: space-between;
+		padding: 10vh 0;
+	}
+
+	.win-loss {
+		font-size: 1.6rem;
+	}
+	.title {
+		text-align: center;
+		font-size: 1.6rem;
+	}
+
+	.total {
+		font-size: 3rem;
+		font-weight: 300;
+	}
+
+	.current {
+		font-size: 1rem;
+	}
 }
