@@ -1,16 +1,21 @@
 import { Component } from 'react';
 import Player from './Player/Player';
 import ActionsBar from './actionsBar/ActionsBar';
+const initialState = {
+	finalScore: 100,
+	dices: [1, 1],
+	playerTurn: 1,
+	players: [
+		{ currentScore: 0, globalScore: 0 },
+		{ currentScore: 0, globalScore: 0 },
+	],
+};
 class Board extends Component {
-	state = {
-		finalScore: 100,
-		dices: [null, null],
-		playerTurn: 1,
-		players: [
-			{ currentScore: 0, globalScore: 0 },
-			{ currentScore: 0, globalScore: 0 },
-		],
-	};
+	state = { ...initialState };
+
+	onNewGame() {
+		this.setState({ ...initialState });
+	}
 	render() {
 		return (
 			<div className="board">

@@ -9,8 +9,6 @@ import {
 	faAngleDoubleDown,
 } from '@fortawesome/free-solid-svg-icons';
 class ActionsBar extends Component {
-	state = {};
-	handleInputChange = () => {};
 	render() {
 		return (
 			<div className="container">
@@ -28,7 +26,7 @@ class ActionsBar extends Component {
 				</ActionButton>
 				<FinalScore
 					value={this.props.finalScore}
-					handleInputChange={this.handleInputChange}
+					handleInputChange={this.props.handleInputChange}
 				/>
 			</div>
 		);
