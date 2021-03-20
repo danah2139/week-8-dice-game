@@ -1,8 +1,9 @@
-const { Component } = require('react');
-
+import { Component } from 'react';
+import Player from './Player/Player';
+import ActionsBar from './actionsBar/ActionsBar';
 class Board extends Component {
 	state = {
-		pointsToWin: 100,
+		finalScore: 100,
 		dices: [null, null],
 		playerTurn: 1,
 		players: [
@@ -11,7 +12,26 @@ class Board extends Component {
 		],
 	};
 	render() {
-		return <div></div>;
+		return (
+			<div className="board">
+				<Player
+					globalScore={this.state.players[0].globalScore}
+					currentScore={this.state.players[0].currentScore}
+					dices={this.state.dices}
+				/>
+				<br />
+				<ActionsBar
+					dices={this.state.dices}
+					finalScore={this.state.finalScore}
+				/>
+				<br />
+				<Player
+					globalScore={this.state.players[1].globalScore}
+					currentScore={this.state.players[1].currentScore}
+					dices={this.state.dices}
+				/>
+			</div>
+		);
 	}
 }
 export default Board;
