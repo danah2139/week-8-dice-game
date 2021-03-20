@@ -8,6 +8,7 @@ class FinalScore extends Component {
 					type="number"
 					onChange={this.onFinalScoreChange}
 					placeholder="FINAL SCORE"
+					className="final-score"
 				/>
 			</div>
 		);
