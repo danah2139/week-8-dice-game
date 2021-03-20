@@ -1,0 +1,6 @@
+.board {
+	display: flex;
+	margin: 3vh 3vw;
+	width: 94vw;
+	height: 94vh;
+}

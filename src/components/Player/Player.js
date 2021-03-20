@@ -1,16 +1,21 @@
 import React from 'react';
-import CurrentScore from './CurrentScore/CurrentScore';
-import GlobalScore from './GlocalScore/GlocalScore';
+import CurrentScore from './CurrentScore';
+import GlobalScore from './GlobalScore';
+import './player.css';
 
-import './Player.css';
-
-const Player = ({ globalScore, CurrentScore, dices }) => {
-	return (
-		<div className="player">
-			<GlobalScore score={globalScore} />
-			<CurrentScore dices={dices} />
-		</div>
-	);
+const Player = ({ globalScore, CurrentScore, dices, playerTurn, hasWon }) => {
+	if (hasWon === 'in-game') {
+		return (
+			<div className={`player ${playerTurn ? 'my-turn' : ''}`}>
+				<GlobalScore score={globalScore} />
+				<CurrentScore dices={dices} playerTurn={playerTurn} />
+			</div>
+		);
+	} else if (hasWon === 'won') {
+		return <div className="player">{'won :)'}</div>;
+	} else {
+		return <div className="player">{'loss :('}</div>;
+	}
 };
 
 export default Player;

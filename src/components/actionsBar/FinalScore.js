@@ -6,7 +6,7 @@ class FinalScore extends Component {
 			<div>
 				<input
 					type="number"
-					onChange={this.handleInputChange(this.props)}
+					onChange={this.onFinalScoreChange}
 					placeholder="FINAL SCORE"
 				/>
 			</div>

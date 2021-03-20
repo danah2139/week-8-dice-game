@@ -26,7 +26,7 @@ class ActionsBar extends Component {
 				</ActionButton>
 				<FinalScore
 					value={this.props.finalScore}
-					handleInputChange={this.props.handleInputChange}
+					onFinalScoreChange={this.props.onFinalScoreChange}
 				/>
 			</div>
 		);
