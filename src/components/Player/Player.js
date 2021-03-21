@@ -4,13 +4,13 @@ import GlobalScore from './GlobalScore';
 
 import './player.css';
 
-const Player = ({ score, dices, playerTurn, hasWon, playerName }) => {
+const Player = ({ globalScore, dices, playerTurn, hasWon, playerName }) => {
 	if (hasWon === 'in-game') {
 		return (
 			<div className={`player ${playerTurn ? 'my-turn' : ''}`}>
 				<div style={{ textAlign: 'center' }}>
 					<span className="title">{playerName}</span>
-					<GlobalScore score={score} />
+					<GlobalScore score={globalScore} />
 				</div>
 				<CurrentScore dices={dices} playerTurn={playerTurn} />
 			</div>
