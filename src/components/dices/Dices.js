@@ -1,5 +1,5 @@
 import React from 'react';
-import Dice from './Dice';
+import Dice from '../dice/Dice';
 
 const Dices = ({ dices }) => {
 	return (

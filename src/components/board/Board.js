@@ -30,8 +30,7 @@ class Board extends Component {
 		});
 
 		if (newDices[0] === newDices[1]) {
-			const onSameValue = this.onSameValue.bind(this);
-			setTimeout(onSameValue, 800);
+			this.onSameValue();
 		}
 
 		function getRndInteger(min, max) {
@@ -40,21 +39,18 @@ class Board extends Component {
 	}
 
 	onHold = () => {
-		const { dices, players, playerTurn } = this.state;
 		this.setState((prevState) => ({
-			players: prevState.players.map((player, index) =>
-				playerTurn === parseInt(index)
-					? {
-							globalScore:
-								player.globalScore + player.currentlScore + dices[0] + dices[1],
-							currentScore: 0,
-					  }
-					: player
-			),
 			playerTurn: prevState.playerTurn === 0 ? 1 : 0,
 			dices: [1, 1],
+			players: prevState.players.map((player, index) => {
+				return prevState.playerTurn === index
+					? {
+							globalScore: player.currentScore + player.globalScore,
+							currentScore: 0,
+					  }
+					: player;
+			}),
 		}));
-		console.log(this.state.players);
 	};
 
 	onNewGame() {
@@ -64,16 +60,18 @@ class Board extends Component {
 		this.setState({ finalScore: event.target.value });
 	}
 
-	onSameValue(newDices) {
+	onSameValue = (newDices) => {
 		const { players, playerTurn, dices } = this.state;
 		this.setState({
 			players: players.map((player, index) =>
-				playerTurn === parseInt(index) ? { currentScore: 0, ...player } : player
+				playerTurn === parseInt(index)
+					? { currentScore: 0, globalScore: player.globalScore }
+					: player
 			),
 			playerTurn: playerTurn === 0 ? 1 : 0,
 			dices: [1, 1],
 		});
-	}
+	};
 
 	render() {
 		const { players, finalScore } = this.state;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Dices from '../dices/Dices';
-import ActionButton from './ActionButton';
-import FinalScore from './FinalScore';
+import ActionButton from '../actionButton/ActionButton';
+import FinalScore from '../finalScore/FinalScore';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './actionsBar.css';
 import {
